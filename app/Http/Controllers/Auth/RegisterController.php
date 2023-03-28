@@ -78,6 +78,7 @@ class RegisterController extends Controller
     public function register(Request $request){
         if($request->isMethod('post')){
             $data = $request->input();
+            //dd($data);
             $rules = [
             'username' => 'required|string|min:2|max:12',
             'mail' => 'required|string|email|min:5|max:40|unique:users',
@@ -85,8 +86,8 @@ class RegisterController extends Controller
             ];
             $this->validate($request, $rules);
             $this->create($data);
-            $user = $request->session()->get('username');
-            return redirect('added')->with('username','$user');
+            $request->session()->put('username',$data['username']);
+            return redirect('added');
         }
         return view('auth.register');
     }
