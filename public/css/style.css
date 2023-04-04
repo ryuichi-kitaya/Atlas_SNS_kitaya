@@ -8,6 +8,17 @@ header{
     background:#186AC9;
 }
 
+.accordion{
+    padding:10px;
+    background:#f7ecf1;
+    font-weight:bold;
+}
+
+.accordion-contents{
+    padding:10px;
+    display:none;
+}
+
 /* main content */
 #row{
     display: flex;
