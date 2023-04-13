@@ -32,6 +32,7 @@ Route::post('/added', 'Auth\RegisterController@added');
 //ログイン中のページ
 Route::group(['middleware' => 'auth'],function(){
 Route::get('/top','PostsController@index');
+Route::post('/top','PostsController@tweet');//ツイート登録用
 
 Route::get('/profile','UsersController@profile');
 

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    {!! Form::open(['url' => 'post/top']) !!}
+    {!! Form::open(['url' => '/top']) !!}
     <div class="form-group">
      {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください。']) !!}
     </div>
