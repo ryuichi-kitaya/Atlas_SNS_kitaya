@@ -51,18 +51,19 @@
                 <p>フォロー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="followerList-btn"><a href="">フォローリスト</a></p>
+                <p class="followerList-btn"><a href="/follow-list">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
                 <p>〇〇名</p>
                 </div>
-                <p class="followList-btn"><a href="">フォロワーリスト</a></p>
+                <p class="followList-btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
-            <p class="users-search-btn"><a href="">ユーザー検索</a></p>
+            <p class="users-search-btn"><a href="/search">ユーザー検索</a></p>
         </div>
     </div>
     <footer>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="{{ asset('js/script.js') }} "></script>
     <script src="JavaScriptファイルのURL"></script>
 </body>

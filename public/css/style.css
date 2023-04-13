@@ -19,6 +19,7 @@ header{
     display:none;
 }
 
+
 /* main content */
 #row{
     display: flex;
@@ -30,4 +31,28 @@ header{
 #side-bar{
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+.followerList-btn a{
+    display: inline-block;
+    color: #f7ecf1;
+    background-color: #186AC9;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.followList-btn a{
+    display: inline-block;
+    color: #f7ecf1;
+    background-color: #186AC9;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.users-search-btn a{
+    display: inline-block;
+    color: #f7ecf1;
+    background-color: #186AC9;
+    border-radius: 30px;
+    text-align: center;
 }

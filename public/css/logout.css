@@ -8,3 +8,8 @@ body{
     height: 100%;
     background: #186AC9;
 }
+
+.followerList-btn{
+    display: block;
+    color: #186AC9;
+}
