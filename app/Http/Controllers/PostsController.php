@@ -14,8 +14,14 @@ class PostsController extends Controller
 
     public function tweet(Request $request)
     {
+       //ログインしているユーザーのID
        $post = $request->input('newPost');
-       Post::create(['post' => $post]);
-       return redirect('top');
+       $user = Auth::user()->id;
+       Post::create([
+        'post' => $post,
+        //user_idを追加
+        'user_id' => $user,
+    ]);
+       return redirect('/top');
     }
 }
