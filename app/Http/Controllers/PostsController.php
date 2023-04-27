@@ -25,4 +25,9 @@ class PostsController extends Controller
     ]);
        return redirect('/top');
     }
+
+    public function index(){
+        $list = Post::get();
+        return view('posts.index',['list'=>$list]);
+    }
 }

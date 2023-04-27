@@ -8,6 +8,15 @@
     </div>
     <button type="submit" class="btn btn-success pull-right">送信</button>
     {!! Form::close() !!}
+    @foreach ($list as $list)
+    <tr>
+        <td>{{ $list->username }}</td>
+        <td>{{ $list->post }}</td>
+        <td>{{ $list->created_at }}</td>
+        <td></td>
+        <td></td>
+    </tr>
+    @endforeach
 </div>
 
 @endsection
