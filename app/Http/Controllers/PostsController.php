@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class PostsController extends Controller
 {
     //
-    public function index(){
-        return view('posts.index');
-    }
+    
 
     public function tweet(Request $request)
     {
@@ -29,5 +27,10 @@ class PostsController extends Controller
     public function index(){
         $list = Post::get();
         return view('posts.index',['list'=>$list]);
+    }
+
+    public function update($id){
+        $post = Post::where('id',$id)->first();
+        return view('/top',['post'=>$post]);
     }
 }

@@ -33,6 +33,7 @@ Route::post('/added', 'Auth\RegisterController@added');
 Route::group(['middleware' => 'auth'],function(){
 Route::get('/top','PostsController@index');
 Route::post('/top','PostsController@tweet');//ツイート登録用
+Route::post('/post/update','PostsController@update');//つぶやき更新用
 
 Route::get('/profile','UsersController@profile');
 
