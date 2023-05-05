@@ -38,7 +38,7 @@ Route::get('/post/{id}/delete','PostsController@delete');//つぶやき削除用
 
 Route::get('/profile','UsersController@profile');
 
-Route::get('/search','UsersController@search');
+Route::get('/search','UsersController@search');//検索用
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
