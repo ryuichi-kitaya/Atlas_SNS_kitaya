@@ -29,14 +29,14 @@ class PostsController extends Controller
         return view('posts.index',['list'=>$list]);
     }
 
-    public function update(Request $request){
+    public function update(Request $request){//投稿を更新する記述
         $id = $request->input('id');
         $post = $request->input('upPost');
         Post::where('id',$id)->update(['post' => $post]);
         return redirect('/top');
     }
 
-    public function delete($id)
+    public function delete($id)//投稿を削除する記述
     {
         Post::where('id',$id)->delete();
         return redirect('/top');

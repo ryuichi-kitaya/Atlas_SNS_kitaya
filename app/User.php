@@ -27,3 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 }
+class User extends Model{
+    public function posts()
+    {
+        return $this->hasMany('App¥Post');
+    }
+}

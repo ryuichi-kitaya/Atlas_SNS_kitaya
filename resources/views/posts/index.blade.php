@@ -13,6 +13,7 @@
         <td>{{ $list->username }}</td>
         <td>{{ $list->post }}</td>
         <td>{{ $list->created_at }}</td>
+        <td>
         <div class="content">
             <a class="js-modal-open" href="/post/update" post="{{ $list->post }}" post_id="{{ $list->id }}">編集</a>
         </div>
@@ -33,5 +34,4 @@
     </div>
 
 </div>
-
 @endsection
