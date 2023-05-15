@@ -18,6 +18,9 @@
 
 //Auth::routes();
 
+Route::get('/',function(){
+    return view('index');
+})->name('login');
 
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');
