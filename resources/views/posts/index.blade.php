@@ -10,7 +10,7 @@
     {!! Form::close() !!}
     @foreach ($list as $list)
     <tr>
-        <td>{{ $list->username }}</td>
+        <td>{{ $list->user->username }}</td>
         <td>{{ $list->post }}</td>
         <td>{{ $list->created_at }}</td>
         <td>
