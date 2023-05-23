@@ -17,6 +17,7 @@
     <button type="submit" class="btn btn-danger">フォローする</button>
   </form>
   <form action="/unfollow" method="POST">
+    @csrf
     <button type="submit" class="btn btn-danger">フォロー解除する</button>
   </form>
 @endforeach
