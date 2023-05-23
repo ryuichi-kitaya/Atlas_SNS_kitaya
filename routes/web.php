@@ -44,6 +44,9 @@ Route::get('/profile','UsersController@profile');
 Route::post('/search','UsersController@search')->name('users.search');
 Route::get('/search','UsersController@searchView');
 
+Route::post('/follow','FollowsController@follow');
+Route::post('/followed','FollowsController@followed');
+
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
 
