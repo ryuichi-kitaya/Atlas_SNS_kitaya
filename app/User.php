@@ -27,18 +27,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function posts()
+    public function posts()//投稿しているユーザーのリレーション
     {
         return $this->hasMany('App\Post');
     }
-    //↓フォローしているユーザーをすべて取得
-    public function follows()
-    {
-        return $this->belongsToMany(User::class, 'follower_user', 'follower_id', 'user_id');
-    }
-    //フォロワーをすべて取得
-    public function followers()
-    {
-        return $this->belongsToMany(User::class, 'follower_user', 'user_id', 'follower_id');
-    }
+   
 }

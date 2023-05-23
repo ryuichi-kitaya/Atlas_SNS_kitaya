@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class FollowsController extends Controller
 {
     //
-    public function followList(){
+    public function follow(){
         return view('follows.followList');
     }
-    public function followerList(){
+    public function followed(){
         return view('follows.followerList');
     }
 }

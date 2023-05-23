@@ -17,7 +17,7 @@ class PostsController extends Controller
        //ログインしているユーザーのID
        $post = $request->input('newPost');
        $user = Auth::user()->id;
-       Post::create([
+       Post::create([ //ポストモデルを呼び出す
         'post' => $post,
         //user_idを追加
         'user_id' => $user,
@@ -42,4 +42,27 @@ class PostsController extends Controller
         Post::where('id',$id)->delete();
         return redirect('/top');
     }
+    //フォロー機能  リレーション
+    public function followings()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'following_id', 'followed_id');
+    }
+    //フォロー解除  リレーション
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'followed_id', 'following_id');
+    }
+    
+    //フォローする
+    public function follow(Int $user_id)
+    {
+        return $this->followers()->attach($user_id);
+    }
+
+    //フォロー解除する
+    public function unfollow(Int $user_id)
+    {
+        return $this->followers()->detach($user_id);
+    }
+
 }
