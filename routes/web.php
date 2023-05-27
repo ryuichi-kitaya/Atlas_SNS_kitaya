@@ -44,11 +44,11 @@ Route::get('/profile','UsersController@profile');
 Route::post('/search','UsersController@search')->name('users.search');
 Route::get('/search','UsersController@searchView');
 
-Route::post('/follow','PostsController@follow');//フォローする
-Route::post('/unfollow','PostsController@unfollow');//フォロー解除
+Route::post('/follow/{id}','FollowsController@follow');//フォローする
+Route::post('/unfollow/{id}','FollowsController@unfollow');//フォロー解除
 
-Route::get('/follow-list','PostsController@index');
-Route::get('/follower-list','PostsController@index');
+Route::get('/follow-list','FollowsController@followlist');
+Route::get('/follower-list','FollowsController@followerlist');
 
 Route::get('/logout','Auth\LoginController@logout');
 });
