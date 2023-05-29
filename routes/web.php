@@ -44,8 +44,8 @@ Route::get('/profile','UsersController@profile');
 Route::post('/search','UsersController@search')->name('users.search');
 Route::get('/search','UsersController@searchView');
 
-Route::post('/follow/{id}','FollowsController@follow');//フォローする
-Route::post('/unfollow/{id}','FollowsController@unfollow');//フォロー解除
+Route::post('/users/{id}/follow','FollowsController@follow')->name('follow');//フォローする
+Route::post('/users{id}/unfollow','FollowsController@unfollow')->name('unfollow');//フォロー解除
 
 Route::get('/follow-list','FollowsController@followlist');
 Route::get('/follower-list','FollowsController@followerlist');

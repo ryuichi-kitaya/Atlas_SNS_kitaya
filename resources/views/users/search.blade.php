@@ -12,11 +12,11 @@
 <div class="user-list">
 @foreach($users as $user)
   <p>{{$user->username}}</p>
-  <form action="/follow/{{$user->id}}" method="POST">
+  <form action="/users/{{$user->id}}/follow" method="POST">
     @csrf
     <button type="submit" class="btn btn-danger">フォローする</button>
   </form>
-  <form action="/unfollow/{{$user->id}}" method="POST">
+  <form action="/users/{{$user->id}}/unfollow" method="POST">
     @csrf
     <button type="submit" class="btn btn-danger">フォロー解除する</button>
   </form>
