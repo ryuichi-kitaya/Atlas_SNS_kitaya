@@ -11,15 +11,23 @@
 </div>
 <div class="user-list">
 @foreach($users as $user)
+  @if($user->image == null)
+  <img src="/storage/icon1.png">
+  @else
+  <img src="/storage/{{$user->image}}">
+  @endif
   <p>{{$user->username}}</p>
-  <form action="/users/{{$user->id}}/follow" method="POST">
+  @if(Auth::user()->isFollowing(followed_id))
+  <form action="{{route('follow', ['user' => $user->id])}}" method="POST">
     @csrf
     <button type="submit" class="btn btn-danger">フォローする</button>
   </form>
-  <form action="/users/{{$user->id}}/unfollow" method="POST">
+  @else
+  <form action="{{route('unfollow', ['user' => $user->id])}}" method="POST">
     @csrf
     <button type="submit" class="btn btn-danger">フォロー解除する</button>
   </form>
+  @endif
 @endforeach
 </div>
 

@@ -27,4 +27,15 @@ class UsersController extends Controller
         $users = User::get();
         return view('users.search',compact('users'));
     }
+    //画像をpublicディレクトリに保存する記述
+    public function image(Request $request, User $user)
+    {
+        $originalImg = $request->user_icon;
+        if($originalImg->isValid()){
+            $filePath = $originalImg->store('public');
+            $user->image = str_replace('public/','',$filePath);
+            $user->save();
+            return redirect("/user/{$user->id}")->with('user',$user);
+        }
+    }
 }

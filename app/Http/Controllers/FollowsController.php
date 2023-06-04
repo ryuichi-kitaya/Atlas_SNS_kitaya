@@ -14,26 +14,19 @@ class FollowsController extends Controller
     public function followerlist(){
         return view('follows.followerList');
     }
-    
-    //フォローする
-    public function follow(User $user)
-    {
-        $follower = auth()->user();
-        $is_following = $follower->isFollowing($user->id);
-        if(!$is_following){
-            $follower->follow($user->id);
-            return back();
-        }  
+
+    public function follow(Request $request, User $user)
+    {   //user()=今現在ログインしている人=自分
+        //following()=自分がフォローしている人を取得
+        //attach=フォローさせる
+        $request->user()->following()->attach($user->id);
+        return back();
     }
 
     //フォロー解除する
-    public function unfollow(User $user)
+    public function unfollow(Request $request,User $user)
     {
-        $follower = auth()->user();
-        $is_following = $follower->isFollowing($user->id);
-        if($is_following){
-        $follower->unfollow($user->id);
-        return redirect();
-        }
+        $request->user()->follower()->detach($user->id);
+        return back();
     }
 }
