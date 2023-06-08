@@ -26,7 +26,8 @@ class FollowsController extends Controller
     //フォロー解除する
     public function unfollow(Request $request,User $user)
     {
-        $request->user()->follower()->detach($user->id);
+        //
+        $request->user()->followed()->detach($user->id);
         return back();
     }
 }

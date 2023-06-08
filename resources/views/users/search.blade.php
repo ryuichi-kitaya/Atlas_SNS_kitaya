@@ -17,7 +17,7 @@
   <img src="/storage/{{$user->image}}">
   @endif
   <p>{{$user->username}}</p>
-  @if(Auth::user()->isFollowed($user->id))
+  @if(Auth::user()->isFollowing($user))
   <form action="{{route('follow', ['user' => $user->id])}}" method="POST">
     @csrf
     <button type="submit" class="btn btn-danger">フォローする</button>
