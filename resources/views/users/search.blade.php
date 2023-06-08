@@ -18,12 +18,12 @@
   @endif
   <p>{{$user->username}}</p>
   @if(Auth::user()->isFollowing($user))
-  <form action="{{route('follow', ['user' => $user->id])}}" method="POST">
+  <form action="{{route('unfollow', ['user' => $user->id])}}" method="POST">
     @csrf
     <button type="submit" class="btn btn-danger">フォローする</button>
   </form>
   @else
-  <form action="{{route('unfollow', ['user' => $user->id])}}" method="POST">
+  <form action="{{route('follow', ['user' => $user->id])}}" method="POST">
     @csrf
     <button type="submit" class="btn btn-danger">フォロー解除する</button>
   </form>
