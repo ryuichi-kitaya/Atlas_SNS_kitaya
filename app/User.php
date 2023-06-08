@@ -48,7 +48,7 @@ class User extends Authenticatable
     {
         return (boolean) $this->followers()->where('followed_id', $user_id)->exists();
     }
-
+    //フォロー解除しているかの確認
     public function isFollowed(User $user)
     {
         return (boolean) $this->followings()->where('following_id', $user_id)->exists();
