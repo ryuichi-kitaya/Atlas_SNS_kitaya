@@ -43,5 +43,11 @@ class PostsController extends Controller
         return redirect('/top');
     }
     
+    public function followlist(){
+        $post = Post::query()->whereIn('user_id', Auth::user()->followed()->pluck('followed_user_id'))->latest()->get();
+        return view('follows.followList')->with([
+            'posts' => $posts,
+        ]);
+    }
 
 }
