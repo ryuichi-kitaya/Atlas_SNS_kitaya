@@ -38,4 +38,17 @@ class UsersController extends Controller
             return redirect("/user/{$user->id}")->with('user',$user);
         }
     }
+
+    public function edit(Request $request){
+        $user = Auth::user();
+        $originalImg = $request->file('icon')->store('public/images');
+        $user->update([
+            'username' => $request->input('username'),
+            'mail' => $request->input('mail'),
+            'password' => bcrypt($request->input('password')),
+            'bio' => $request->input('bio'),
+            'image' => $request->input($image),
+        ]);
+        return redirect('/top');
+    }
 }

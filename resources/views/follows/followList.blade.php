@@ -2,12 +2,15 @@
 
 @section('content')
 
+<ul>
 @foreach($posts as $post)
-<tr>
-    <td>image</td>
-    <td>{{$post->user->username}}</td>
-    <td>{{$post->post}}</td>
-</tr>
+    <li>
+        <image>image</image>
+        <p>{{$post->user->username}}</p>
+        <p>{{$post->post}}</p>
+        <p>{{$post->created_at }}</p>
+    </li>
 @endforeach
+</ul>
 
 @endsection

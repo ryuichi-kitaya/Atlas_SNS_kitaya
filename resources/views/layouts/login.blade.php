@@ -32,7 +32,7 @@
                 <dd class="accordion-contents">
                 <ul>
                     <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
+                    <li><a href="/profile/{id}/edit">プロフィール編集</a></li>
                     <li><a href="/logout">ログアウト</a></li>
                 </ul>
                 </dd>

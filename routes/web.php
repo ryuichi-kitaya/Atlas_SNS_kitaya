@@ -39,7 +39,8 @@ Route::post('/top','PostsController@tweet');//ツイート登録用
 Route::post('/post/update','PostsController@update');//つぶやき更新用
 Route::get('/post/{id}/delete','PostsController@delete');//つぶやき削除用
 
-Route::get('/profile','UsersController@profile');
+Route::get('/profile/{id}/edit','UsersController@profile');
+Route::post('/profile/{id}/edit','UsersController@edit');//プロフィール編集画面遷移
 
 Route::post('/search','UsersController@search')->name('users.search');
 Route::get('/search','UsersController@searchView');
