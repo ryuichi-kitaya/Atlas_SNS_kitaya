@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use App\Post;
 use App\User;
 
@@ -11,7 +12,8 @@ class UsersController extends Controller
 {
     //
     public function profile(){
-        return view('users.profile');
+        $user = Auth::user();
+        return view('users.profile',compact('user'));
     }
     public function search(Request $request){
         $keyword = $request ->input('keyword');//変数を定義
@@ -41,14 +43,26 @@ class UsersController extends Controller
 
     public function edit(Request $request){
         $user = Auth::user();
-        $originalImg = $request->file('icon')->store('public/images');
+        $image = $request->file('image')->getClientOriginalName();
+        $request->file('image')->storeAs('public/images',$image);
         $user->update([
             'username' => $request->input('username'),
             'mail' => $request->input('mail'),
             'password' => bcrypt($request->input('password')),
             'bio' => $request->input('bio'),
-            'image' => $request->input($image),
+            'images' => $request->file('image')->getClientOriginalName(),
         ]);
         return redirect('/top');
+    }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'username' => 'required|string|min:2|max:12',
+            'mail' => 'required|string|email|min:5|max:40|unique:users',
+            'password' => 'alpha_num|string|min:8|max:20|confirmed',
+            'bio' => 'string|max:150',
+            'images' => 'file|mimes:jpg,png,bmp,gif,svg',
+        ]);
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
 
-{!! Form::open(['url' => ['/profile/{id}/edit'], 'method' => 'post']) !!}
+{!! Form::open(['url' => ['/profile/{id}/edit'], 'method' => 'post','enctype'=>"multipart/form-data"]) !!}
 {!! Form::hidden('id',$user->id) !!}
 <tr>
 <td>
@@ -15,11 +15,11 @@
 </td>
 <td>
 {{ Form::label('password','password') }}
-{{ Form::text('password',$user->password,['class' => 'input']) }}
+{{ Form::password('password',null,['class' => 'input']) }}
 </td>
 <td>
 {{ Form::label('password_confirm','password confirm') }}
-{{ Form::text('password',$user->password,['class' => 'input']) }}
+{{ Form::password('password',null,['class' => 'input']) }}
 </td>
 <td>
 {{ Form::label('bio','bio') }}
@@ -33,6 +33,6 @@
 {{ Form::submit('更新') }}
 </td>
 </tr>
-{{!! Form::close() !!}}
+{!! Form::close() !!}
 
 @endsection

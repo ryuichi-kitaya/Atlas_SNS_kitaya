@@ -25,14 +25,14 @@
         <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="icon">
-                    <p>さん<img src="images/icon1.png"></p>
+                    <p>さん<img src="storage/images/{{Auth::user()->images}}"></p>
                 <div>
             <dl>
                 <dt class="accordion"></dt>
                 <dd class="accordion-contents">
                 <ul>
                     <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile/{id}/edit">プロフィール編集</a></li>
+                    <li><a href="/profile/{{Auth::user()->id}}/edit">プロフィール編集</a></li>
                     <li><a href="/logout">ログアウト</a></li>
                 </ul>
                 </dd>

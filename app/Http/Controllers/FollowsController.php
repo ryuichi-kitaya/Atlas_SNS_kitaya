@@ -11,16 +11,29 @@ class FollowsController extends Controller
 {
     //
     public function followlist(){
-        $posts = Post::query()->whereIn('user_id', Auth::user()->followed()->pluck('followed_id'))->latest()->get();
+        $users = User::get();
+        $posts = Post::query()->whereIn('user_id', Auth::user()->following()->pluck('followed_id'))->latest()->get();
         return view('follows.followList')->with([
             'posts' => $posts,
         ]);
     }
     public function followerlist(){
+        $users = User::get();
         $posts = Post::query()->whereIn('user_id', Auth::user()->followed()->pluck('following_id'))->latest()->get();
         return view('follows.followerList')->with([
             'posts' => $posts,
         ]);
+    }
+
+    public function image(Request $request, User $user)
+    {
+        $originalImg = $request->user_icon;
+        if($originalImg->isValid()){
+            $filePath = $originalImg->store('public');
+            $user->image = str_replace('public/','',$filePath);
+            $user->save();
+            return redirect("/user/{$user->id}")->with('user',$user);
+        }
     }
 
     public function follow(Request $request, User $user)
@@ -35,7 +48,7 @@ class FollowsController extends Controller
     public function unfollow(Request $request,User $user)
     {
         //
-        $request->user()->followed()->detach($user->id);
+        $request->user()->following()->detach($user->id);
         return back();
     }
 }

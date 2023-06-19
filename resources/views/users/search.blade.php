@@ -11,21 +11,21 @@
 </div>
 <div class="user-list">
 @foreach($users as $user)
-  @if($user->image == null)
+  @if($user->images == null)
   <img src="/storage/icon1.png">
   @else
-  <img src="/storage/{{$user->image}}">
+  <img src="/storage/images/{{$user->images}}">
   @endif
   <p>{{$user->username}}</p>
   @if(Auth::user()->isFollowing($user))
   <form action="{{route('unfollow', ['user' => $user->id])}}" method="POST">
     @csrf
-    <button type="submit" class="btn btn-danger">フォローする</button>
+    <button type="submit" class="btn btn-danger">フォロー解除</button>
   </form>
   @else
   <form action="{{route('follow', ['user' => $user->id])}}" method="POST">
     @csrf
-    <button type="submit" class="btn btn-danger">フォロー解除する</button>
+    <button type="submit" class="btn btn-danger">フォローする</button>
   </form>
   @endif
 @endforeach
