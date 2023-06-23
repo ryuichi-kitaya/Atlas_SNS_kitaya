@@ -6,8 +6,8 @@
     <section class="Follow-List">
         <h1>Follow List</h1>
         <div class="user-images">
-            @foreach($follows as $follow)
-            <a><img src="{{ asset('storage/images/'.$follow->user->images) }}"></a>
+            @foreach($followings as $following)
+            <a><img src="{{ asset('storage/images/'.$following->images) }}"></a>
             @endforeach
         </div>
     </section>

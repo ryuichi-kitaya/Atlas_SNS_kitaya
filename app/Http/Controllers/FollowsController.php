@@ -11,19 +11,26 @@ class FollowsController extends Controller
 {
     //
     public function followlist(){
-        $follows = User::get()->whereIn('user_id', Auth::user()->following()->pluck('followed_id'))->latest()->get();
+        //ログインしているユーザー（私）
+        $user = Auth::user();
+        //私がフォローしている人たち
+        $followings = $user->following;
         $users = User::get();
         $posts = Post::query()->whereIn('user_id', Auth::user()->following()->pluck('followed_id'))->latest()->get();
         return view('follows.followList')->with([
             'posts' => $posts,
-            'images' => $follows,
+            //followingsを使いますと記述
+            'followings' => $followings
         ]);
     }
     public function followerlist(){
+        $user = Auth::user();
+        $followers = $user->followed;
         $users = User::get();
         $posts = Post::query()->whereIn('user_id', Auth::user()->followed()->pluck('following_id'))->latest()->get();
         return view('follows.followerList')->with([
             'posts' => $posts,
+            'followers' => $followers
         ]);
     }
 

@@ -2,6 +2,17 @@
 
 @section('content')
 
+<div class="container">
+    <section class="Follower-List">
+        <h1>Follower List</h1>
+        <div class="user-images">
+            @foreach($followers as $follower)
+            <a><img src="{{ asset('storage/images/'.$follower->images) }}"></a>
+            @endforeach
+        </div>
+    </section>
+</div>
+
 <ul>
 @foreach($posts as $post)
     <li>
