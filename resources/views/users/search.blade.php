@@ -11,8 +11,8 @@
 </div>
 <div class="user-list">
 @foreach($users as $user)
-  @if($user->images == null)
-  <img src="/storage/icon1.png">
+  @if($user->images == 'icon1.png')
+  <img src="{{ asset('images/icon2.png') }}">
   @else
   <img src="/storage/images/{{$user->images}}">
   @endif
