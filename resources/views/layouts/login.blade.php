@@ -25,7 +25,7 @@
         <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="icon">
-                    <p>さん<img src="storage/images/{{Auth::user()->images}}"></p>
+                    <p>{{ Auth::user()->username}}さん<img src="storage/images/{{Auth::user()->images}}"></p>
                 <div>
             <dl>
                 <dt class="accordion"></dt>
@@ -46,7 +46,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{ Auth::user()->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>

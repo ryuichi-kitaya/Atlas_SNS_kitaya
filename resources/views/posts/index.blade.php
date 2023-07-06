@@ -9,7 +9,7 @@
     <button type="submit" class="btn btn-success pull-right">送信</button>
     {!! Form::close() !!}
     @foreach ($list as $list)
-    <tr>
+      <tr>
         <td>{{ $list->user->username }}</td>
         <td>{{ $list->post }}</td>
         <td>{{ $list->created_at }}</td>
@@ -19,7 +19,7 @@
         </div>
         </td>
         <td><a class="btn btn-danger" href="/post/{{$list->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a></td>
-    </tr>
+      </tr>
     @endforeach
     <div class="modal js-modal">
     <div class="modal__bg js-modal-close"></div>

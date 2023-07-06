@@ -34,6 +34,12 @@ class FollowsController extends Controller
         ]);
     }
 
+    public function otherprofile(){
+        $user = User::get();
+        $post = Post::get();
+        return view('users.otherprofile',compact('user','post'));
+    }
+
     public function follow(Request $request, User $user)
     {   //user()=今現在ログインしている人=自分
         //following()=自分がフォローしている人を取得

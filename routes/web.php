@@ -51,5 +51,7 @@ Route::post('/unfollow/{user}','FollowsController@unfollow')->name('unfollow');/
 Route::get('/follow-list','FollowsController@followlist');
 Route::get('/follower-list','FollowsController@followerlist');
 
+Route::get('/otherprofile/{id}','FollowsController@otherprofile');
+
 Route::get('/logout','Auth\LoginController@logout');
 });
