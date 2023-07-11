@@ -7,6 +7,10 @@
     <input type="text" name="keyword" value="">
     <input type="submit" value="検索">
   </form>
+
+  @if (!empty($keyword))
+  <P>検索ワード：{{$keyword}}</P>
+  @endif
   
 </div>
 <div class="user-list">

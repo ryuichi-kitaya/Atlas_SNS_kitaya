@@ -12,7 +12,7 @@
                 <p class="name">{{$user->username}}</p>
                 <p class="bio">{{$user->bio}}</p>
             </div>
-            `
+
             @if(Auth::user()->isFollowing($user))
             <form action="{{route('unfollow', ['user' => $user->id])}}" method="POST">
             @csrf
@@ -28,7 +28,7 @@
         <div class="timeline">
         @foreach($posts as $post)
          <li>
-            <a><img src="{{ asset('storage/images/'.$post->user->images) }}"></a>
+            <a><img src="{{ asset('storage/images/' .$post->user->images) }}"></a>
             <p>{{$post->user->username}}</p>
             <p>{{$post->post}}</p>
             <p>{{$post->created_at }}</p>

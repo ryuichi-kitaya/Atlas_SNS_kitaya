@@ -45,6 +45,13 @@ class UsersController extends Controller
         $user = Auth::user();
         $image = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/images',$image);
+        $validator = Validator::make($request->all(), [
+            'username' => 'required|string|min:2|max:12',
+            'mail' => 'required|string|email|min:5|max:40|unique:users',
+            'password' => 'alpha_num|string|min:8|max:20|confirmed',
+            'bio' => 'string|max:150',
+            'images' => 'file|mimes:jpg,png,bmp,gif,svg',
+        ]);
         $user->update([
             'username' => $request->input('username'),
             'mail' => $request->input('mail'),
@@ -52,17 +59,13 @@ class UsersController extends Controller
             'bio' => $request->input('bio'),
             'images' => $request->file('image')->getClientOriginalName(),
         ]);
+        if($validator->fails()){
+            return redirect('/errorpage')
+            ->withErrors($validator)
+            ->withInput();
+        }else{
         return redirect('/top');
+        }
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'username' => 'required|string|min:2|max:12',
-            'mail' => 'required|string|email|min:5|max:40|unique:users',
-            'password' => 'alpha_num|string|min:8|max:20|confirmed',
-            'bio' => 'string|max:150',
-            'images' => 'file|mimes:jpg,png,bmp,gif,svg',
-        ]);
-    }
 }

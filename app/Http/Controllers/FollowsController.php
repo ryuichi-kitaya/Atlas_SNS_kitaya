@@ -33,11 +33,11 @@ class FollowsController extends Controller
             'followers' => $followers
         ]);
     }
-
-    public function otherprofile(){
-        $user = User::get();
-        $post = Post::get();
-        return view('users.otherprofile',compact('user','post'));
+    //他ユーザーのプロフィールに遷移
+    public function otherprofile($id){
+        $user = User::where('id', $id)->first();
+        $posts = Post::where('user_id', $id)->get();
+        return view('users.otherprofile',compact('user','posts'));
     }
 
     public function follow(Request $request, User $user)
