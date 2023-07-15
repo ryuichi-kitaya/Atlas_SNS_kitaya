@@ -21,8 +21,8 @@
 {{ Form::password('password',null,['class' => 'input']) }}
 </td>
 <td>
-{{ Form::label('password_confirm','password confirm') }}
-{{ Form::password('password',null,['class' => 'input']) }}
+{{ Form::label('password_confirmation','password confirm') }}
+{{ Form::password('password_confirmation',null,['class' => 'input']) }}
 </td>
 <td>
 {{ Form::label('bio','bio') }}

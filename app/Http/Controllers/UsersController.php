@@ -43,8 +43,6 @@ class UsersController extends Controller
 
     public function edit(Request $request){
         $user = Auth::user();
-        $image = $request->file('image')->getClientOriginalName();
-        $request->file('image')->storeAs('public/images',$image);
         $validator = Validator::make($request->all(), [
             'username' => 'required|string|min:2|max:12',
             'mail' => 'required|string|email|min:5|max:40|unique:users',
@@ -52,19 +50,26 @@ class UsersController extends Controller
             'bio' => 'string|max:150',
             'images' => 'nullable|file|mimes:jpg,png,bmp,gif,svg',
         ]);
-        if($validator->fails()){
-            return redirect('/profile/edit')
-            ->withErrors($validator)
-            ->withInput();
-        }else{
-        $user->update([
-            'username' => $request->input('username'),
-            'mail' => $request->input('mail'),
-            'password' => bcrypt($request->input('password')),
-            'bio' => $request->input('bio'),
-            'images' => $request->file('image')->getClientOriginalName(),
-        ]);
-        return redirect('users.profile');
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        } else {
+            $user_data = [
+                'username' => $request->input('username'),
+                'mail' => $request->input('mail'),
+                'password' => bcrypt($request->input('password')),
+                'bio' => $request->input('bio'),
+            ];
+            if ($request->hasFile('image')) {
+                //送信された内容にイメージを持っていたら・・・
+                $image = $request->file('image')->getClientOriginalName();
+                //先ほど送信された画像の名前・・・
+                $request->file('image')->storeAs('public/images', $image);
+                //画像の格納先を記述している
+                $user_data['images'] = $image;
+                //プロフィール更新したユーザーが持っているデータ
+            }
+            $user->update($user_data);
+            return redirect('users.profile');
         }
     }
 
