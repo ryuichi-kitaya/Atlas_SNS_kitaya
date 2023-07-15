@@ -52,6 +52,11 @@ class UsersController extends Controller
             'bio' => 'string|max:150',
             'images' => 'file|mimes:jpg,png,bmp,gif,svg',
         ]);
+        if($validator->fails()){
+            return redirect('/errorpage')
+            ->withErrors($validator)
+            ->withInput();
+        }else{
         $user->update([
             'username' => $request->input('username'),
             'mail' => $request->input('mail'),
@@ -59,12 +64,7 @@ class UsersController extends Controller
             'bio' => $request->input('bio'),
             'images' => $request->file('image')->getClientOriginalName(),
         ]);
-        if($validator->fails()){
-            return redirect('/errorpage')
-            ->withErrors($validator)
-            ->withInput();
-        }else{
-        return redirect('/top');
+        return redirect('/top')
         }
     }
 
