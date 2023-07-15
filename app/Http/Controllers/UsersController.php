@@ -50,10 +50,10 @@ class UsersController extends Controller
             'mail' => 'required|string|email|min:5|max:40|unique:users',
             'password' => 'alpha_num|string|min:8|max:20|confirmed',
             'bio' => 'string|max:150',
-            'images' => 'file|mimes:jpg,png,bmp,gif,svg',
+            'images' => 'nullable|file|mimes:jpg,png,bmp,gif,svg',
         ]);
         if($validator->fails()){
-            return redirect('/errorpage')
+            return redirect('/profile/edit')
             ->withErrors($validator)
             ->withInput();
         }else{
@@ -64,7 +64,7 @@ class UsersController extends Controller
             'bio' => $request->input('bio'),
             'images' => $request->file('image')->getClientOriginalName(),
         ]);
-        return redirect('/top')
+        return redirect('users.profile');
         }
     }
 

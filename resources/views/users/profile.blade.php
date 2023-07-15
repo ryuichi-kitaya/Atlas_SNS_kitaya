@@ -4,6 +4,9 @@
 
 {!! Form::open(['url' => ['/profile/{id}/edit'], 'method' => 'post','enctype'=>"multipart/form-data"]) !!}
 {!! Form::hidden('id',$user->id) !!}
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
 <tr>
 <td>
 {{ Form::label('username','user name') }}
