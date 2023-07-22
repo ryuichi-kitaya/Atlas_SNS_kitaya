@@ -57,4 +57,15 @@ class User extends Authenticatable
     {
         return (boolean) $this->followed()->where('following_id', $user->id)->exists();
     }
+
+    public function getFollowCount(User $user)
+    {
+    return $this->where('followed_id', $user->id)->count();
+    }
+
+    public function getFollowerCount(User $user)
+    {
+    return $this->where('following_id', $user->id)->count();
+    }
+
 }

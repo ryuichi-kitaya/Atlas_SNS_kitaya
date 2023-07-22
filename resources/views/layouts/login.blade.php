@@ -22,7 +22,7 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
+        <h1><a href="/top"><img src="images/atlas.png" width="67" height="67"></a></h1>
             <div id="">
                 <div id="icon">
                     <p>{{ Auth::user()->username}}さん<img src="storage/images/{{Auth::user()->images}}"></p>
@@ -49,12 +49,12 @@
                 <p>{{ Auth::user()->username}}さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p>〇〇名</p>
+                <p>{{Auth::user()->following()->count()}}名</p>
                 </div>
                 <p class="followerList-btn"><a href="/follow-list">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <p>{{Auth::user()->followed()->count()}}名</p>
                 </div>
                 <p class="followList-btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>
