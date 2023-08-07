@@ -6,17 +6,23 @@ body{
 /* header */
 header{
     background:#186AC9;
+    display: flex;
+    justify-content: space-between;
 }
+
+
+/*アコーディオン*/
 
 .accordion{
     padding:10px;
-    background:#f7ecf1;
+    background:#186AC9;
     font-weight:bold;
 }
 
 .accordion-contents{
     padding:10px;
     display:none;
+    background-color: #f7ecf1;
 }
 
 
@@ -33,28 +39,30 @@ header{
     border-left: 1px solid #727272;
 }
 
-.followerList-btn a{
-    display: inline-block;
-    color: #f7ecf1;
-    background-color: #186AC9;
-    border-radius: 30px;
-    text-align: center;
+.header-menu{
+    display: flex;
 }
 
-.followList-btn a{
-    display: inline-block;
+
+.sidebtn{
     color: #f7ecf1;
     background-color: #186AC9;
-    border-radius: 30px;
-    text-align: center;
+    border-color: #186AC9;
+    border-radius: 3px;
+    border: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 12px;
+    width: 9em;
+}
+/*em=文字  親要素もしくわ自分の要素のフォントサイズを参照*/
+
+.sidebtn a{
+    color: #fff;
 }
 
-.users-search-btn a{
-    display: inline-block;
-    color: #f7ecf1;
-    background-color: #186AC9;
-    border-radius: 30px;
-    text-align: center;
+.ff{
+    display: flex;
 }
 
 .content{
@@ -84,7 +92,106 @@ header{
     width: 60%;
 }
 
-/*共通部分*/
-.head a{
-    
+/*ログイン画面*/
+.login{
+    display: block;
+    position: absolute;
+    width: 1280px;
+    height: 720px;
+}
+
+/*TOP*/
+
+.timeline{
+    display: flex;
+}
+
+.form-group{
+    display: flex;
+}
+
+.top-a{
+    width: 100%;
+}
+
+.top-b{
+    float: right;
+}
+
+.top-c{
+    float: right;
+}
+
+/*SEARCH*/
+.search-list{
+    display: flex;
+}
+
+.btn-content{
+    margin: 20px;
+}
+
+.search-name{
+    padding-top: 25px;
+}
+
+.unfollow{
+    background-color: red;
+    border-color: red;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 12px;
+    width: 8em;
+}
+
+.follow{
+    background-color: #186AC9;
+    border-color: #186AC9;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 12px;
+    width: 8em;
+}
+
+.search{
+    display: flex;
+}
+
+/*他ユーザー*/
+
+.other-timeline{
+    display: flex;
+}
+
+.other-profile{
+    display: flex;
+}
+
+/*フォローリスト*/
+
+.follow-timeline{
+    display: flex;
+}
+
+.follow-a{
+    width: 100%;
+}
+
+/*フォロワーリスト*/
+.follower-timeline{
+    display: flex;
+}
+
+.follower-timeline:nth-child(n+2){
+    border-top: #727272;
+}
+
+.follower-a{
+    width: 100%;
 }

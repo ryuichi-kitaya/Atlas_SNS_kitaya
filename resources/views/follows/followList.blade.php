@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="followlist-container">
     <section class="Follow-List">
         <h1>Follow List</h1>
         <div class="user-images">
@@ -13,15 +13,19 @@
     </section>
 </div>
 
-<ul>
 @foreach($posts as $post)
-    <li>
-        <a href="{{ url('otherprofile/' .$post->id) }}"><img src="{{ asset('storage/images/'.$post->user->images) }}"></a>
-        <p>{{$post->user->username}}</p>
-        <p>{{$post->post}}</p>
-        <p>{{$post->created_at }}</p>
-    </li>
+<div class="follow-timeline">
+    <div class="follow-icon">
+      <a href="{{ url('otherprofile/' .$post->id) }}"><img src="{{ asset('storage/images/'.$post->user->images) }}"></a>
+    </div>
+    <div class="follow-a">
+      <p>{{$post->user->username}}</p>
+      <p>{{$post->post}}</p>
+    </div>
+    <div class="follow-b">
+      <p>{{$post->created_at }}</p>
+    </div>
+</div>
 @endforeach
-</ul>
 
 @endsection

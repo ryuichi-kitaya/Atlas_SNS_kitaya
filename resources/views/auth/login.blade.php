@@ -2,8 +2,10 @@
 
 @section('content')
 
+
 {!! Form::open() !!}
 
+<div class="login">
 <p>AtlasSNSへようこそ</p>
 
 {{ Form::label('e-mail') }}
@@ -16,5 +18,6 @@
 <p><a href="/register">新規ユーザーの方はこちら</a></p>
 
 {!! Form::close() !!}
+</div>
 
 @endsection

@@ -4,37 +4,42 @@
 
 <div class="container">
     <section class="user-profile">
-        <div class="profile">
-            <div class="user-image">
-            <img src="{{ asset('storage/images/'.$user->images) }}">
+        <div class="other-profile">
+            <div class="other-icon">
+              <img src="{{ asset('storage/images/'.$user->images) }}">
             </div>
             <div class="name-bio">
-                <p class="name">{{$user->username}}</p>
-                <p class="bio">{{$user->bio}}</p>
+                <p class="name">name   {{$user->username}}</p>
+                <p class="bio">bio     {{$user->bio}}</p>
             </div>
-
-            @if(Auth::user()->isFollowing($user))
-            <form action="{{route('unfollow', ['user' => $user->id])}}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-danger">フォロー解除</button>
-            </form>
-            @else
-            <form action="{{route('follow', ['user' => $user->id])}}" method="POST">
-            @csrf
-            <button type="submit" class="btn btn-danger">フォローする</button>
-            </form>
-            @endif
+            <div class="btn-content">
+              @if(Auth::user()->isFollowing($user))
+              <form action="{{route('unfollow', ['user' => $user->id])}}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-danger unfollow">フォロー解除</button>
+              </form>
+              @else
+              <form action="{{route('follow', ['user' => $user->id])}}" method="POST">
+              @csrf
+              <button type="submit" class="btn btn-danger follow">フォローする</button>
+              </form>
+              @endif
+            </div>
         </div>
-        <div class="timeline">
         @foreach($posts as $post)
-         <li>
+        <div class="other-timeline">
+          <div class="other-icon">
             <a><img src="{{ asset('storage/images/' .$post->user->images) }}"></a>
+          </div>
+          <div class="other-a">
             <p>{{$post->user->username}}</p>
             <p>{{$post->post}}</p>
+          </div>
+          <div class="other-b">
             <p>{{$post->created_at }}</p>
-         </li>
-       @endforeach
+          </div>
         </div>
+        @endforeach
     </section>
 </div>
 
