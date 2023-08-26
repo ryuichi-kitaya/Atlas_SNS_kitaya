@@ -4,7 +4,7 @@
 <div class="search">
   <form action="/search" method="POST">
     @csrf
-    <input type="text" name="keyword" value="">
+    <input type="text" name="keyword" placeholder="ユーザー名" value="">
     <input type="image" class="roop" src="images/roop.png" alt="" width="25" height="25" value="">
   </form>
   @if (!empty($keyword))

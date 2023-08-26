@@ -43,9 +43,7 @@ header{
     display: flex;
 }
 
-
-.sidebtn{
-    color: #f7ecf1;
+.search-btn{
     background-color: #186AC9;
     border-color: #186AC9;
     border-radius: 3px;
@@ -55,14 +53,52 @@ header{
     font-size: 12px;
     width: 9em;
 }
+
+.search-btn a{
+    color: #fff;
+}
+
+.sidebtn{
+    background-color: #186AC9;
+    border-color: #186AC9;
+    border-radius: 3px;
+    border: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 12px;
+    width: 9em;
+}
+
 /*em=文字  親要素もしくわ自分の要素のフォントサイズを参照*/
 
 .sidebtn a{
     color: #fff;
 }
 
+.side-user{
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+}
+
 .ff{
     display: flex;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.ff-btn{
+    text-align: right;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+
+.s-btn{
+    text-align: center;
+    border-top: 2px solid #d3d3d3;
+    padding-top: 20px;
 }
 
 .content{
@@ -104,14 +140,30 @@ header{
 
 .timeline{
     display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.timeline:nth-child(n+2){
+    border-top: 2px solid #d3d3d3;
 }
 
 .form-group{
     display: flex;
+    border-bottom: 4px solid #d3d3d3;
+    padding-bottom: 10px;
+}
+
+.form-control{
+    width: 100%;
+    border: none;
+    padding-top: 10px;
+
 }
 
 .top-a{
     width: 100%;
+    padding-top: 15px;
 }
 
 .top-b{
@@ -128,11 +180,12 @@ header{
 }
 
 .btn-content{
-    margin: 20px;
+    padding-top: 15px;
 }
 
 .search-name{
     padding-top: 25px;
+    width: 30%;
 }
 
 .unfollow{
@@ -161,37 +214,126 @@ header{
 
 .search{
     display: flex;
+    border-bottom: 4px solid #d3d3d3;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
-/*他ユーザー*/
+/*プロフ更新*/
+.profile-container{
 
-.other-timeline{
+}
+
+.edit-content{
+    width: 100%;
+}
+
+.profile-box{
     display: flex;
+    width: 100%;
 }
 
-.other-profile{
-    display: flex;
+.label{
+    width: 40%;
+    display: inline-block;
 }
+
+.input{
+    width: 50%;
+}
+
+.koshin{
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.koshin-btn{
+    background-color: red;
+    border-color: red;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 12px;
+    width: 9em;
+}
+
 
 /*フォローリスト*/
 
 .follow-timeline{
     display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .follow-a{
     width: 100%;
+    padding-top: 15px;
+}
+
+.Follow-List{
+    border-bottom: 4px solid #d3d3d3;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.follow-timeline:nth-child(n+2){
+    border-top: 2px solid #d3d3d3;
 }
 
 /*フォロワーリスト*/
 .follower-timeline{
     display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .follower-timeline:nth-child(n+2){
-    border-top: #727272;
+    border-top: 2px solid #d3d3d3;
 }
 
 .follower-a{
     width: 100%;
+    padding-top: 15px;
+}
+
+.Follower-List{
+    border-bottom: 4px solid #d3d3d3;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*他ユーザープロフ*/
+
+.name-bio{
+    width: 100%;
+    padding-top: 15px;
+}
+
+.other-a{
+    width: 100%;
+    padding-top: 15px;
+}
+
+.other-timeline{
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.other-profile{
+    display: flex;
+    border-bottom: 4px solid #d3d3d3;
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.other-timeline:nth-child(n+2){
+    border-top: 2px solid #d3d3d3;
 }

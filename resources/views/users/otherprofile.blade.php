@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="other-profilecontainer">
     <section class="user-profile">
         <div class="other-profile">
             <div class="other-icon">

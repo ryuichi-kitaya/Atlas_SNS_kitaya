@@ -22,41 +22,45 @@
 <body>
     <header>
         <div class = "logo">
-          <h1><a href="/top"><img src="images/atlas.png" alt=""  width="50" height="50"></a></h1>
+          <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"  width="45" height="45"></a></h1>
         </div>
         <div class="header-menu">
           <p>{{ Auth::user()->username}}さん</p>
           <div class="accordion"></div>
             <div class="accordion-contents">
-              <ul>
-                <li><a href="/top">ホーム</a></li>
-                <li><a href="/profile/{{Auth::user()->id}}/edit">プロフィール編集</a></li>
-                <li><a href="/logout">ログアウト</a></li>
-              </ul>
+                <p><a href="/top">ホーム</a></p>
+                <p><a href="/profile/{{Auth::user()->id}}/edit">プロフィール編集</a></p>
+                <p><a href="/logout">ログアウト</a></p>
             </div>
-            <img src="storage/images/{{Auth::user()->images}}"></p>
           </div>
         </div>
+        <img src="{{ asset('storage/images/'.Auth::user()->images) }}">
     </header>
     <div id="row">
         <div id="container">
             @yield('content')
         </div >
         <div id="side-bar">
-            <div id="confirm">
+              <div class="side-user">
                 <p>{{ Auth::user()->username}}さんの</p>
-                <div class="ff">
+              </div>
+              <div class="ff">
                 <p>フォロー数</p>
                 <p>{{Auth::user()->following()->count()}}名</p>
-                </div>
+              </div>
+              <div class="ff-btn">
                 <button type="submit" class="sidebtn"><a href="/follow-list">フォローリスト</a></button>
-                <div class="ff">
+              </div>
+              <div class="ff">
                 <p>フォロワー数</p>
                 <p>{{Auth::user()->followed()->count()}}名</p>
-                </div>
+              </div>
+              <div class="ff-btn">
                 <button type="submit" class="sidebtn"><a href="/follower-list">フォロワーリスト</a></button>
+              </div>
+            <div class="s-btn">
+            <button type="submit" class="search-btn"><a href="/search">ユーザー検索</a></button>
             </div>
-            <button type="submit" class="sidebtn"><a href="/search">ユーザー検索</a></button>
         </div>
     </div>
     <footer>
