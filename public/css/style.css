@@ -14,17 +14,44 @@ header{
 /*アコーディオン*/
 
 .accordion{
-    padding:10px;
-    background:#186AC9;
-    font-weight:bold;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    max-width: 300px;
+    position: relative;
+    width: 100%;
 }
 
 .accordion-contents{
-    padding:10px;
+    padding: 10px 20px;
     display:none;
-    background-color: #f7ecf1;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
 }
 
+.accordion-contents p{
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.accordion-contents::after{
+    border-right: solid 2px #fff;
+    border-top: solid 2px #fff;
+    display: block;
+    height: 8px;
+    position: absolute;
+    right: 25px;
+    top: 38%;
+    transform: rotate(135deg);
+    transition: transform .3s ease-in-out, top .3s ease-in-out;
+    width: 8px;
+}
+
+.accordion-contents.open::after{
+    top: 45%;
+    transform: rotate(-45deg);
+}
 
 /* main content */
 #row{
@@ -130,10 +157,55 @@ header{
 
 /*ログイン画面*/
 .login{
-    display: block;
-    position: absolute;
-    width: 1280px;
-    height: 720px;
+    width: 20em;
+    text-align: center;
+}
+
+.login-form p{
+    text-align: center;
+    color: #fff;
+}
+
+.login-container{
+    border: solid 4px #727272;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #727272;
+    width: 30%;
+}
+
+.mail-pass p{
+    width: 30%;
+}
+
+.mail-pass{
+    text-align: center;
+}
+
+.login-btn p{
+    width: 20em;
+    text-align: right;
+}
+
+.loginbtn{
+    background-color: red;
+    border-color: red;
+    color: #fff;
+    border-radius: 3px;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 12px;
+}
+
+.register-btn a{
+    color: #fff;
+}
+
+.register-btn p{
+    text-align: center;
 }
 
 /*TOP*/
