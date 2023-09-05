@@ -5,23 +5,23 @@
 
 {!! Form::open() !!}
 
-<div class="login-container">
+<div class="login-container" id="rgba01">
 <div class="login-form">
+<div class="form-title">
 <p>AtlasSNSへようこそ</p>
-<div class="mail-pass">
-<div class="login-mail">
+</div>
+<div class="login-title">
 <p>
 {{ Form::label('mail adress') }}
 </p>
 </div>
 {{ Form::text('mail',null,['class' => 'login']) }}
-<div class="login-password">
+<div class="login-title">
 <p>
 {{ Form::label('password') }}
 </p>
 </div>
 {{ Form::password('password',['class' => 'login']) }}
-</div>
 </div>
 <div class="login-btn">
 <p>

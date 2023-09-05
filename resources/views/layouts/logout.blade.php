@@ -7,7 +7,6 @@
   <meta name="description" content="ページの内容を表す文章" />
   <title></title>
   <link rel="stylesheet" href="{{ asset('css/reset.css') }} ">
-  <link rel="stylesheet" href="{{ asset('css/style.css') }} ">
   <link rel="stylesheet" href="{{ asset('css/logout.css') }} ">
   <!--スマホ,タブレット対応-->
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -22,8 +21,10 @@
 </head>
 <body>
   <header>
-    <h1><img src="images/atlas.png"></h1>
+    <div class="login-header">
+    <h1><img src="images/atlas.png" width="65" height="45"></h1>
     <p>Social Network Service</p>
+    </div>
   </header>
   <div id="container">
     @yield('content')

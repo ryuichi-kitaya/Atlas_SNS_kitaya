@@ -1,6 +1,7 @@
 $(function(){
   $('.accordion').click(function(){
     $(this).next().slideToggle();
+    $(this).toggleClass("open");
   });
 });
 
