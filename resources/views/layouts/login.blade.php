@@ -22,15 +22,17 @@
 <body>
     <header>
         <div class = "logo">
-          <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"  width="55" height="45"></a></h1>
+          <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"  width="80" height="45"></a></h1>
         </div>
         <div class="header-menu">
+          <div class="header-user">
           <p>{{ Auth::user()->username}}さん</p>
+          </div>
           <div class="accordion"></div>
             <div class="accordion-contents">
-              <p><a href="/top">ホーム</a></p>
-              <p><a href="/profile/{{Auth::user()->id}}/edit">プロフィール編集</a></p>
-              <p><a href="/logout">ログアウト</a></p>
+              <a href="/top">HOME</a>
+              <a href="/profile/{{Auth::user()->id}}/edit">プロフィール編集</a>
+              <a href="/logout">ログアウト</a>
             </div>
             <img src="{{ asset('storage/images/'.Auth::user()->images) }}">
           </div>

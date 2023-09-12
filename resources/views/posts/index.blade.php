@@ -4,6 +4,7 @@
 <div class="container">
     {!! Form::open(['url' => '/top']) !!}
     <div class="form-group">
+      <img src="{{ asset('storage/images/'.Auth::user()->images) }}">
      {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください。']) !!}
      <p><input type="image" src="images/post.png" alt="" width="67" height="67"></p>
     </div>
@@ -20,8 +21,8 @@
         <div class="top-b">
           <p>{{ $list->created_at }}</p>
           <div class="top-c">
-            <a class="js-modal-open" href="/post/update" post="{{ $list->post }}" post_id="{{ $list->id }}"><img src="/images/edit.png" width="30" height="30" alt="編集"></a>
-            <a class="btn btn-danger" href="/post/{{$list->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="/images/trash.png" width="30" height="30" alt="削除"></a>
+          <a class="js-modal-open" href="/post/update" post="{{ $list->post }}" post_id="{{ $list->id }}"><img src="/images/edit.png" width="30" height="30" alt="編集"></a>
+          <a class="btn btn-danger" href="/post/{{$list->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="/images/trash.png" width="30" height="30" alt="削除"></a>
           </div>
         </div>
       </div>

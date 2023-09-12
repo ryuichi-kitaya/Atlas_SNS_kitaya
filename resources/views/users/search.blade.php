@@ -5,6 +5,7 @@
   <form action="/search" method="POST">
     @csrf
     <input type="text" name="keyword" placeholder="ユーザー名" value="">
+
     <input type="image" class="roop" src="images/roop.png" alt="" width="25" height="25" value="">
   </form>
   @if (!empty($keyword))
@@ -14,14 +15,12 @@
 
 @foreach($users as $user)
 <div class="search-list">
-  <div class="search-icon">
+  <div class="search-icon-name">
     @if($user->images == 'icon1.png')
     <img src="{{ asset('images/icon2.png') }}">
     @else
     <img src="/storage/images/{{$user->images}}">
     @endif
-  </div>
-  <div class="search-name">
     <p>{{$user->username}}</p>
   </div>
   <div class="btn-content">
