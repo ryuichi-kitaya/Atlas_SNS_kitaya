@@ -22,7 +22,7 @@
 <body>
     <header>
         <div class = "logo">
-          <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"  width="80" height="45"></a></h1>
+          <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"  width="60" height="45"></a></h1>
         </div>
         <div class="header-menu">
           <div class="header-user">
@@ -34,7 +34,7 @@
               <a href="/profile/{{Auth::user()->id}}/edit">プロフィール編集</a>
               <a href="/logout">ログアウト</a>
             </div>
-            <img src="{{ asset('storage/images/'.Auth::user()->images) }}">
+            <img src="{{ asset('storage/images/'.Auth::user()->images) }}" width="40" height="40">
           </div>
         </div>
     </header>

@@ -19,6 +19,7 @@ header{
 .logo img{
     padding-top: 8px;
     padding-left: 8px;
+    padding-bottom: 8px;
 }
 
 .header-user p{
@@ -41,6 +42,10 @@ header{
     max-width: 300px;
     position: relative;
     width: 30px;
+}
+
+.accordion img{
+    padding-top: 10px;
 }
 
 .accordion-contents{
@@ -81,6 +86,7 @@ header{
     transform: rotate(135deg);
     transition: transform .3s ease-in-out, top .3s ease-in-out;
     width: 8px;
+    cursor: pointer;
 }
 
 .accordion.open::after{
@@ -118,6 +124,10 @@ header{
 
 .search-btn a{
     color: #fff;
+}
+
+.search p{
+    padding-left: 45px;
 }
 
 .sidebtn{

@@ -30,9 +30,13 @@ body{
     padding-bottom: 20px;
 }
 
+.form-title p{
+    font-size: 20px;
+}
+
 .login{
     width: 20em;
-    text-align: center;
+    text-align: left;
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 10px;
@@ -63,7 +67,7 @@ body{
 }
 
 .login-btn p{
-    padding-top: 10px;
+    padding-top: 20px;
     padding-right: 25px;
     text-align: right;
 }
@@ -88,4 +92,124 @@ body{
 .register-btn p{
     padding-top: 30px;
     text-align: center;
+}
+
+/*新規登録画面*/
+
+.register-container{
+    border-radius: 10px;
+    background-color: #727272;
+    width: 16em;
+    height: 22em;
+    margin: auto;
+    position: relative;
+}
+
+.register-form{
+
+}
+
+.input{
+    width: 17em;
+    border-radius: 5px;
+    border: none;
+    height: 25px;
+}
+
+.register-form h2{
+    color: #fff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.register-form h1{
+    color: #fff;
+    font-size: 14px;
+    padding-left: 18px;
+}
+
+.register-form p{
+    text-align: center;
+}
+
+.register-form-content{
+    padding-bottom: 15px;
+}
+
+.back-btn a{
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    bottom: 15px;
+    right: 65px;
+}
+
+.back-btn p{
+    text-align: center;
+    padding-top: 15px;
+}
+
+.registerbtn{
+    background-color: red;
+    border-color: red;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-size: 14px;
+    position: absolute;
+    right: 15px;
+}
+
+/*完了画面*/
+
+#clear{
+    border-radius: 10px;
+    background-color: #727272;
+    width: 17em;
+    height: 15em;
+    margin: auto;
+    text-align: center;
+}
+
+.clear-name{
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.clear-title{
+    color: #fff;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.clear-message{
+    color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn a{
+    background-color: red;
+    border-color: red;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 14px;
+}
+
+.clear-btn{
+    padding-top: 25px;
+    padding-bottom: 25px;
 }

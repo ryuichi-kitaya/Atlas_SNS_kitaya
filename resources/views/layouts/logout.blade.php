@@ -22,7 +22,7 @@
 <body>
   <header>
     <div class="login-header">
-    <h1><img src="images/atlas.png" width="65" height="45"></h1>
+    <h1><img src="images/atlas.png" width="70" height="50"></h1>
     <p>Social Network Service</p>
     </div>
   </header>

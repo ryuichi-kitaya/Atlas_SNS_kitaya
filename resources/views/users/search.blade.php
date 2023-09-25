@@ -14,6 +14,7 @@
 </div>
 
 @foreach($users as $user)
+@if($user->id !== Auth::user()->id)
 <div class="search-list">
   <div class="search-icon-name">
     @if($user->images == 'icon1.png')
@@ -37,6 +38,7 @@
     @endif
   </div>
 </div>
+@endif
 @endforeach
 
 
