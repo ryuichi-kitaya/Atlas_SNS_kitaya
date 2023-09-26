@@ -22,7 +22,7 @@
 <body>
     <header>
         <div class = "logo">
-          <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"  width="60" height="45"></a></h1>
+          <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"  width="30%" height="auto"></a></h1>
         </div>
         <div class="header-menu">
           <div class="header-user">

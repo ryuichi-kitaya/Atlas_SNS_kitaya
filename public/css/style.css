@@ -38,14 +38,15 @@ header{
 .accordion{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 25px;
     max-width: 300px;
     position: relative;
     width: 30px;
 }
 
-.accordion img{
-    padding-top: 10px;
+.header-menu img{
+    padding-top: 7px;
+    padding-right: 7px;
 }
 
 .accordion-contents{
@@ -55,7 +56,7 @@ header{
     color: #727272;
     position: absolute;
     background-color: #fff;
-    top: 64px;
+    top: 53px;
     right: 0;
 }
 

@@ -168,7 +168,7 @@ body{
 
 /*完了画面*/
 
-#clear{
+.clear{
     border-radius: 10px;
     background-color: #727272;
     width: 17em;

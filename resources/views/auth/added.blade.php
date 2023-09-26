@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="clear" id="rgba01">
+<div class="clear" id="rgba01">
   <div class="clear-name">
   <p>{{Session::get('username')}}さん</p>
   </div>
