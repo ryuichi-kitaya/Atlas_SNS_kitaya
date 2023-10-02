@@ -40,9 +40,13 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+
         if($request->isMethod('post')){
             //dd($request);
-
+            $request->validate([
+                'mail' => 'required',
+                'password' => 'required',
+            ]);
             $data=$request->only('mail','password');
             // ログインが成功したら、トップページへ
             //↓ログイン条件は公開時には消すこと

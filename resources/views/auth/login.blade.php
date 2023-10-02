@@ -13,12 +13,18 @@
 <div class="login-title">
 <p>
 {{ Form::label('mail adress') }}
+@foreach ($errors->get('mail') as $error)
+  <li>{{$error}}</li>
+@endforeach
 </p>
 </div>
 {{ Form::text('mail',null,['class' => 'login']) }}
 <div class="login-title">
 <p>
 {{ Form::label('password') }}
+@foreach ($errors->get('password') as $error)
+  <li>{{$error}}</li>
+@endforeach
 </p>
 </div>
 {{ Form::password('password',['class' => 'login']) }}

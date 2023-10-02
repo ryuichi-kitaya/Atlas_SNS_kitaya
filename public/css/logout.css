@@ -66,6 +66,10 @@ body{
     padding-bottom: 5px;
 }
 
+.login-title li{
+    width: 13em;
+}
+
 .login-btn p{
     padding-top: 20px;
     padding-right: 25px;

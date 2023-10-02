@@ -6,9 +6,7 @@
 <div class="register-container" id="rgba01">
 <div class="register-form">
 <h2>新規ユーザー登録</h2>
-@foreach ($errors->all() as $error)
-  <li>{{$error}}</li>
-@endforeach
+
 <div class="register-form-content">
 <h1>
 {{ Form::label('user name') }}
@@ -52,6 +50,9 @@
 </div>
 
 </div>
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
 {!! Form::close() !!}
 
 

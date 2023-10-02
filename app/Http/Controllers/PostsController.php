@@ -15,13 +15,17 @@ class PostsController extends Controller
     public function tweet(Request $request)
     {
        //ログインしているユーザーのID
-       $post = $request->input('newPost');
+       $post = $request->input('post');
        $user = Auth::user()->id;
+       $request->validate([
+        'post' => 'required|min:1|max:150',
+       ]);
        Post::create([ //ポストモデルを呼び出す
         'post' => $post,
         //user_idを追加
         'user_id' => $user,
     ]);
+       
        return redirect('/top');
     }
 

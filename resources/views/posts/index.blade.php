@@ -2,10 +2,15 @@
 
 @section('content')
 <div class="container">
+    <ul>
+    @foreach ($errors->get('post') as $error)
+     <li>{{$error}}</li>
+    @endforeach
+    </ul>
     {!! Form::open(['url' => '/top']) !!}
     <div class="form-group">
       <img src="{{ asset('storage/images/'.Auth::user()->images) }}">
-     {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください。']) !!}
+     {!! Form::input('text', 'post', null, ['required', 'class' => 'form-control', 'placeholder' => '投稿内容を入力してください。']) !!}
      <p><input type="image" src="images/post.png" alt="" width="67" height="67"></p>
     </div>
     {!! Form::close() !!}
