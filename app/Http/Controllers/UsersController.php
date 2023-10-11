@@ -15,6 +15,7 @@ class UsersController extends Controller
         $user = Auth::user();
         return view('users.profile',compact('user'));
     }
+    
     public function search(Request $request){
         $keyword = $request ->input('keyword');//変数を定義
         if(!empty($keyword)){

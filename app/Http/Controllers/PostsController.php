@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class PostsController extends Controller
 {
     //
-    
+
 
     public function tweet(Request $request)
     {
@@ -25,18 +25,23 @@ class PostsController extends Controller
         //user_idを追加
         'user_id' => $user,
     ]);
-       
+
        return redirect('/top');
     }
 
     public function index(){
-        $list = Post::get();
-        return view('posts.index',['list'=>$list]);
+        $list = Post::query()->whereIn('id', Auth::user()->following()->pluck('followed_id'))->latest()->get();
+        return view('posts.index',['list'=>$list])->with([
+            'post' => $list,
+        ]);
     }
 
     public function update(Request $request){//投稿を更新する記述
         $id = $request->input('id');
         $post = $request->input('upPost');
+        $request->validate([
+            'post' => 'required|min:1|max:150',
+        ]);
         Post::where('id',$id)->update(['post' => $post]);
         return redirect('/top');
     }

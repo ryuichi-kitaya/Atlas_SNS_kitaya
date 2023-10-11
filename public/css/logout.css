@@ -68,6 +68,7 @@ body{
 
 .login-title li{
     width: 13em;
+    color: red;
 }
 
 .login-btn p{

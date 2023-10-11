@@ -208,6 +208,10 @@ header{
     left: 350px;
 }
 
+.modal_post{
+    resize: none;
+}
+
 /*TOP*/
 
 .timeline{
@@ -243,6 +247,12 @@ header{
     border: none;
     height: 100px;
 
+}
+
+.container ul{
+    text-align: right;
+    padding-top: 5px;
+    color: red;
 }
 
 .top-icon img{
