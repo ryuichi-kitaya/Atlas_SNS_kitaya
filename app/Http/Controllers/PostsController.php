@@ -25,18 +25,19 @@ class PostsController extends Controller
         //user_idを追加
         'user_id' => $user,
     ]);
-
        return redirect('/top');
     }
 
     public function index(){
-        $list = Post::query()->whereIn('id', Auth::user()->following()->pluck('followed_id'))->latest()->get();
-        return view('posts.index',['list'=>$list])->with([
-            'post' => $list,
-        ]);
+        $following = Auth::user()->following()->pluck('followed_id');
+        //dd($following);
+        $list = Post::query('user')->whereIn('user_id',$following)->orWhere('user_id',Auth::user()->id)->get();
+        $list = Post::orderBy('created_at','desc')->get();
+        return view('posts.index',['list'=>$list]);
     }
 
     public function update(Request $request){//投稿を更新する記述
+        $user_id = Auth::id();
         $id = $request->input('id');
         $post = $request->input('upPost');
         $request->validate([
@@ -48,6 +49,7 @@ class PostsController extends Controller
 
     public function delete($id)//投稿を削除する記述
     {
+        $user_id = Auth::id();
         Post::where('id',$id)->delete();
         return redirect('/top');
     }

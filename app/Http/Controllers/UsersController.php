@@ -70,7 +70,7 @@ class UsersController extends Controller
                 //プロフィール更新したユーザーが持っているデータ
             }
             $user->update($user_data);
-            return redirect('users.profile');
+            return redirect('/top');
         }
     }
 
