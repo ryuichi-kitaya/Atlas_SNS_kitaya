@@ -66,8 +66,15 @@ body{
     padding-bottom: 5px;
 }
 
-.login-title li{
-    width: 13em;
+.login-message p{
+    width: 17em;
+    color: red;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.register-message p{
+    width: 17em;
     color: red;
 }
 
@@ -110,9 +117,6 @@ body{
     position: relative;
 }
 
-.register-form{
-
-}
 
 .input{
     width: 17em;
@@ -136,7 +140,7 @@ body{
 }
 
 .register-form p{
-    text-align: center;
+    padding-left: 12px;
 }
 
 .register-form-content{

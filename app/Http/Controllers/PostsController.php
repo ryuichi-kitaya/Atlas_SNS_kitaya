@@ -39,10 +39,10 @@ class PostsController extends Controller
         $user_id = Auth::id();
         $id = $request->input('id');
         $post = $request->input('upPost');
-        $request->validate([
-            'post' => 'required|min:1|max:150',
-        ]);
         Post::where('id',$id)->update(['post' => $post]);
+        $request->validate([
+            'post' => 'min:1|max:150',
+        ]);
         return redirect('/top');
     }
 

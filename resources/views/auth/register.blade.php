@@ -11,6 +11,11 @@
 <h1>
 {{ Form::label('user name') }}
 </h1>
+<div class="register-message">
+@foreach ($errors->get('username') as $error)
+<p>{{$error}}</p>
+@endforeach
+</div>
 <p>
 {{ Form::text('username',null,['class' => 'input']) }}
 </p>
@@ -19,6 +24,11 @@
 <h1>
 {{ Form::label('mail adress') }}
 </h1>
+<div class="register-message">
+@foreach ($errors->get('mail') as $error)
+<p>{{$error}}</p>
+@endforeach
+</div>
 <p>
 {{ Form::text('mail',null,['class' => 'input']) }}
 </p>
@@ -27,6 +37,11 @@
 <h1>
 {{ Form::label('password') }}
 </h1>
+<div class="register-message">
+@foreach ($errors->get('password') as $error)
+<p>{{$error}}</p>
+@endforeach
+</div>
 <p>
 {{ Form::text('password',null,['class' => 'input']) }}
 </p>
@@ -35,6 +50,11 @@
 <h1>
 {{ Form::label('password comfirm') }}
 </h1>
+<div class="register-message">
+@foreach ($errors->get('password') as $error)
+<p>{{$error}}</p>
+@endforeach
+</div>
 <p>
 {{ Form::text('password_confirmation',null,['class' => 'input']) }}
 </p>
@@ -50,9 +70,7 @@
 </div>
 
 </div>
-@foreach ($errors->all() as $error)
-  <li>{{$error}}</li>
-@endforeach
+
 {!! Form::close() !!}
 
 

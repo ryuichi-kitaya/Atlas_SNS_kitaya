@@ -6,7 +6,7 @@
     <section class="user-profile">
         <div class="other-profile">
             <div class="other-icon">
-              <img src="{{ asset('storage/images/'.$user->images) }}">
+              <img src="{{ asset('storage/images/'.$user->images) }}" width="40px" height="auto">
             </div>
             <div class="name-bio">
                 <p class="name">name   {{$user->username}}</p>
@@ -29,7 +29,7 @@
         @foreach($posts as $post)
         <div class="other-timeline">
           <div class="other-icon">
-            <a><img src="{{ asset('storage/images/' .$post->user->images) }}"></a>
+            <a><img src="{{ asset('storage/images/' .$post->user->images) }}" width="40px" height="auto"></a>
           </div>
           <div class="other-a">
             <p>{{$post->user->username}}</p>

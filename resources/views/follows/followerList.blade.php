@@ -7,7 +7,7 @@
         <h1>Follower List</h1>
         <div class="user-images">
             @foreach($followers as $follower)
-            <a href="{{ url('otherprofile/' .$follower->id)}}"><img src="{{ asset('storage/images/'.$follower->images) }}"></a>
+            <a href="{{ url('otherprofile/' .$follower->id)}}"><img src="{{ asset('storage/images/'.$follower->images) }}" width="40px" height="auto"></a>
             @endforeach
         </div>
     </section>
@@ -16,7 +16,7 @@
 @foreach($posts as $post)
 <div class="follower-timeline">
     <div class="follower-icon">
-      <a href="{{ url('otherprofile/' .$post->id) }}"><img src="{{ asset('storage/images/'.$post->user->images) }}"></a>
+      <a href="{{ url('otherprofile/' .$post->id) }}"><img src="{{ asset('storage/images/'.$post->user->images) }}" ></a>
     </div>
     <div class="follower-a">
       <p>{{$post->user->username}}</p>

@@ -46,9 +46,9 @@ class UsersController extends Controller
         $user = Auth::user();
         $validator = Validator::make($request->all(), [
             'username' => 'required|string|min:2|max:12',
-            'mail' => 'required|string|email|min:5|max:40|unique:users',
+            'mail' => 'required|string|email|min:5|max:40',
             'password' => 'alpha_num|string|min:8|max:20|confirmed',
-            'bio' => 'string|max:150',
+            'bio' => 'max:150',
             'images' => 'nullable|file|mimes:jpg,png,bmp,gif,svg',
         ]);
         if ($validator->fails()) {
