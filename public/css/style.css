@@ -256,9 +256,9 @@ header{
 }
 
 .top-icon img{
-    padding-left: 40px;
+    padding-left: 20px;
     padding-right: 25px;
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
 .top-a{
@@ -383,7 +383,7 @@ header{
     width: 17em;
     height: 45px;
     position: absolute;
-    right: 460px;
+    right: 467px;
     bottom: -5px;
     z-index: -1;
 }

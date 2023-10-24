@@ -10,7 +10,7 @@
 @endforeach
 <div class="profile-box">
 <div class="icon-pro">
-<img src="{{ asset('storage/images/'.Auth::user()->images) }}">
+<img src="{{ asset('storage/images/'.Auth::user()->images) }}" width="40%" height="auto">
 </div>
 <div class="edit-content">
 <p>

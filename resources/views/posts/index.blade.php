@@ -9,7 +9,7 @@
     </ul>
     {!! Form::open(['url' => '/top']) !!}
     <div class="form-group">
-      <img src="{{ asset('storage/images/'.Auth::user()->images) }}">
+      <img src="{{ asset('storage/images/'.Auth::user()->images) }}" width="40%" height="auto">
      {!! Form::input('text', 'post', null, ['class' => 'form-control', 'placeholder' => '投稿内容を入力してください。']) !!}
      <p><input type="image" src="images/post.png" alt="" width="67" height="67"></p>
     </div>
@@ -17,7 +17,7 @@
     @foreach ($list as $list)
       <div class="timeline">
         <div class="top-icon">
-          <a><img src="{{ asset('storage/images/'.$list->user->images) }}" width="50%" height="auto"></a>
+          <a><img src="{{ asset('storage/images/'.$list->user->images) }}" width="40%" height="auto"></a>
         </div>
         <div class="top-a">
           <p>{{ $list->user->username }}</p>
