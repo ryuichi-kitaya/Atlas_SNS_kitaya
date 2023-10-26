@@ -307,15 +307,16 @@ header{
 }
 
 .delete-btn span{
-    width: 30px;
-    height: 30px;
-    background-size: auto;
+    width: 35px;
+    height: 35px;
     display: block;
     background: url(../images/trash.png);
+    background-size: 35px;
 }
 
 .delete-btn span:hover{
     background: url(../images/trash-h.png);
+    background-size: 35px;
 }
 
 /*SEARCH*/

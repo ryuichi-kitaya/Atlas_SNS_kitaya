@@ -36,13 +36,13 @@ class PostsController extends Controller
     }
 
     public function update(Request $request){//投稿を更新する記述
-        $user_id = Auth::id();
-        $id = $request->input('id');
-        $post = $request->input('upPost');
-        Post::where('id',$id)->update(['post' => $post]);
+        $user_id = Auth::id();//Authユーザーのみ表示させるために追記したコード
+        $id = $request->input('id');//投稿ボタンを押下したidを取得。
+        $post = $request->input('upPost');//更新後の投稿を取得。
         $request->validate([
-            'post' => 'min:1|max:150',
+            'post' => 'required|min:1|max:150',
         ]);
+        Post::where('id',$id)->update(['post' => $post]);//編集した投稿を更新させるコード
         return redirect('/top');
     }
 
