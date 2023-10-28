@@ -27,7 +27,7 @@
           <p>{{ $list->created_at }}</p>
           @if(Auth::id() === $list->user->id)
           <div class="top-c">
-          <a class="js-modal-open" href="/post/update" post="{{ $list->post }}" post_id="{{ $list->id }}"><img src="/images/edit.png" width="30" height="30" alt="編集"></a>
+          <a class="js-modal-open" href="/post/update" post="{{ $list->post }}" post_id="{{ $list->id }}"><img src="/images/edit.png" width="35" height="35" alt="編集"></a>
           <a class="delete-btn" href="/post/{{$list->id}}/delete" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><span></span></a>
           </div>
           @endif

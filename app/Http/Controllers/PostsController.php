@@ -40,7 +40,7 @@ class PostsController extends Controller
         $id = $request->input('id');//投稿ボタンを押下したidを取得。
         $post = $request->input('upPost');//更新後の投稿を取得。
         $request->validate([
-            'post' => 'required|min:1|max:150',
+            'upPost' => 'required|min:1|max:150',
         ]);
         Post::where('id',$id)->update(['post' => $post]);//編集した投稿を更新させるコード
         return redirect('/top');

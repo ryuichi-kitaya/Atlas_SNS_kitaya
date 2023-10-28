@@ -27,7 +27,7 @@ header{
 }
 
 .header-menu p{
-    width: 15em;
+    width: 12em;
     padding-top: 25px;
     padding-bottom: 12px;
 }
@@ -396,6 +396,7 @@ header{
 
 .icon-pro img{
     padding-right: 30px;
+    padding-top: 10px;
 }
 
 .picture{
@@ -455,7 +456,7 @@ header{
 
 #fileSelect{
     position: absolute;
-    right: 540px;
+    right: 565px;
     bottom: 5px;
 }
 
